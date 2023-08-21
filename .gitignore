@@ -35,3 +35,7 @@
 *.depend
 *.layout
 *.cbp
+
+# Zips
+*.zip
+*.7z
