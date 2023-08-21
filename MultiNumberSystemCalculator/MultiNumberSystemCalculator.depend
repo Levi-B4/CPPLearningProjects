@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1692640863 source:c:\users\levib\source\repos\cpplearningprojects\multinumbersystemcalculator\multinumbersystemcalculator.cpp
-	<iostream>
-	<fstream>
-	<string>
-	<sstream>
-
