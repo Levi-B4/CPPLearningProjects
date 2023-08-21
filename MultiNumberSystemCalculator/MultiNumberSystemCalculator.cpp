@@ -59,12 +59,13 @@ int main()
 	cout << "number of equations: " << numberOfEquations << endl;
 
     //iterate through each equation
-    for(int i = 0; i < numberOfEquations; i++)
+    for(int i = 0; i < numberOfEquations; i++){
         //read equation
         getline(inputFile, inputLine, '\n');
         cout << "[main] equation: " << inputLine << endl;
         //parse equation
         processEquation(inputLine);
+    }
 
 	// Close the file
 	inputFile.close();
