@@ -1,11 +1,8 @@
+#include <vector>
+#include <string>
+
 #ifndef SEARCH_FUNCTIONS
 #define SEARCH_FUNCTIONS
-
-using std::vector;
-using std::string;
-
-int searchRecursive(vector<string> &data, string query);
-
-int searchIterative(vector<string> &data, string query);
-
+int searchRecursive(std::vector<std::string> &data, std::string query);
+int searchIterative(std::vector<std::string> &data, std::string query);
 #endif

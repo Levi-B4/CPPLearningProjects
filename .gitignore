@@ -39,3 +39,6 @@
 # Zips
 *.zip
 *.7z
+
+# bin
+bin/
