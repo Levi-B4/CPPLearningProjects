@@ -1,16 +1,20 @@
-#include "SortFunctions.h"
 #include <iostream>
 
-void SelectionSort(int array[],int numSize){
+#include "SortFunctions.h"
+
+int SelectionSort(int array[], int numSize){
+    int nOperations = 0;
     int i, j, indexSmallest, temp;
 
     for(i = 0; i < numSize; ++i){
         indexSmallest = i;
 
-        // Find index of smallest remaining element
+        //Find index of smallest remaining element
         for(j = i + 1; j < numSize; ++j){
             if(array[j] < array[indexSmallest]){
                 indexSmallest = j;
+				//increase number of relevant operation
+				nOperations++;
             }
         }
 
@@ -19,10 +23,11 @@ void SelectionSort(int array[],int numSize){
         array[i] = array[indexSmallest];
         array[indexSmallest] = temp;
     }
+    return nOperations;
 }
 
-void Merge(int array[], int i, int j, int k){ 
-
+int Merge(int array[], int i, int j, int k){
+    int nOperations = 0;
     // Size of merged partition
     int mergedSize;
 
@@ -35,6 +40,7 @@ void Merge(int array[], int i, int j, int k){
     // Position of elements in right partition
     int rightPos;
     int* mergedNumbers = nullptr;
+	// Operation: assigns a null pointer to mergedNumbers
 
     mergePos = 0;
     mergedSize = k - i + 1;
@@ -59,6 +65,8 @@ void Merge(int array[], int i, int j, int k){
             ++rightPos;
         }
         ++mergePos;
+        //increase number of relevant operations
+		nOperations++;
     }
 
     // If left partition is not empty, add remaining elements to merged numbers
@@ -66,6 +74,8 @@ void Merge(int array[], int i, int j, int k){
         mergedNumbers[mergePos] = array[leftPos];
         ++leftPos;
         ++mergePos;
+        //increase number of relevant operations
+		nOperations++;
     }
 
     // If right partition is not empty, add remaining elements to merged numbers
@@ -73,24 +83,34 @@ void Merge(int array[], int i, int j, int k){
         mergedNumbers[mergePos] = array[rightPos];
         ++rightPos;
         ++mergePos;
+        //increase number of relevant operations
+		nOperations++;
     }
 
     // Copy merge number back to numbers
     for(mergePos = 0; mergePos < mergedSize; ++mergePos){
         array[i + mergePos] = mergedNumbers[mergePos];
+        //increase number of relevant operations
+		nOperations++;
     }
+
+    //output number of operations
+    return nOperations;
 }
 
-void MergeSort(int array[],int i, int k){
+int MergeSort(int array[],int i, int k){
+    int nOperations = 0;
     int j;
 
     if(i < k){
         //Find the midpoint in the partition
         j = (i + k) / 2;
 
-        MergeSort(array, i, j);
-        MergeSort(array, j + 1, k);
+        nOperations += MergeSort(array, i, j);
+        nOperations += MergeSort(array, j + 1, k);
 
-        Merge(array, i, j, k);
+        nOperations += Merge(array, i, j, k);
     }
+    //output number of operations
+    return nOperations;
 }
