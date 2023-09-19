@@ -68,13 +68,12 @@ int main(){
         outputFile << nOperations << endl;
     }
 
-    outputFile << " ,Worst Merge:," << mergeWorstCase << ",Worst Selection:," << selectionWorstCase << endl;
+    outputFile << "Worst Merge:," << mergeWorstCase << ",Worst Selection:," << selectionWorstCase << endl;
 
     //close output file
     outputFile.close();
 
-    cout << "Worst Case Merge: " << mergeWorstCase << endl;
-    cout << "Worst Case Selection: " << selectionWorstCase << endl;
+    cout << "Trials Complete" << endl;
 
     return 0;
 }
