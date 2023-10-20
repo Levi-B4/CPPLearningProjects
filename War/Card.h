@@ -1,35 +1,38 @@
-#ifndef Card_H
+#ifndef CARD_H
 #define CARD_H
 
 class Card{
     public:
 
-        //default constructor
-        Card();
         //constructor with given suit and value
-        Card(int value, int suit);
+        Card(int* value, int* suit);
 
         //returns value of card
-        int getValue();
+        int* GetValue();
         //sets value of card
-        void setValue(int value);
+        void SetValue(int* value);
+
         //gets suit id of card
-        int GetSuit();
-        //gets suit as c-string
-        char* getSuitAsString();
+        int* GetSuit();
         //sets suit of card
-        void SetSuit(int suit);
+        void SetSuit(int* suit);
+
         //describes card as a string; "value of suit"
-        char* toString();
+        char* ToString();
 
         //destructor
         ~Card();
 
     private:
         //card suit id (alphabetical order)
-        int suit;
+        int* suit;
         //card value 1-13
-        int value;
+        int* value;
+
+        //returns value as c-string
+        char* GetValueString();
+        //gets suit as c-string
+        char* GetSuitString();
 };
 
 #endif // CARD_H

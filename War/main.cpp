@@ -1,9 +1,15 @@
 #include <iostream>
 
+#include "Board.h"
+
 using namespace std;
 
 int main()
 {
-    cout << "Hello world!" << endl;
-    return 0;
+    Board* war = new Board();
+    war->Play();
+
+    delete war;
+
+    return 1;
 }

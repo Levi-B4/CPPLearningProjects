@@ -6,14 +6,16 @@
 class CardPile{
     public:
         //default Constructor
-        Pile();
+        CardPile();
 
         //adds card to end of card array
         void AddCardToPile(Card* card);
+        //remove card from pile
+        void RemoveCardFromPile(Card* card);
         //simulates drawing a card
         Card* DrawCard();
         //returns total number of cards in card array
-        int GetNumCards();
+        int* GetNumCards();
         //randomizes order of card array
         void Shuffle();
         //prints out number of cards
@@ -24,7 +26,7 @@ class CardPile{
 
     private:
         //holds all cards in pile
-        Card * cards[52];
+        Card* cards[52];
         //total cards in pile
         int numCards;
 };
