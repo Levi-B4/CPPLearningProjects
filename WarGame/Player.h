@@ -7,7 +7,10 @@
 class Player{
     public:
         //default constructor
-        Player();
+        Player(char playerID);
+
+        //gets player id char
+        char* GetPlayerID();
 
         //gets main pile
         CardPile* GetDeck();
@@ -16,6 +19,9 @@ class Player{
 
         //draws card from players deck, if returns null then player loses
         Card* playCard();
+
+        //shuffles playedCards and replaces deck
+        void usePlayedCards();
 
         //destructor
         ~Player();
@@ -26,9 +32,8 @@ class Player{
         CardPile* deck = new CardPile();
         //cards that have been played and won
         CardPile* playedCards = new CardPile();
-
-        //shuffles playedCards and replaces deck
-        void usePlayedCards();
+        //identifies player
+        char playerID;
 };
 
 #endif // PLAYER_H

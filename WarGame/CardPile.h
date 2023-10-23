@@ -16,6 +16,8 @@ class CardPile{
         Card* DrawCard();
         //returns total number of cards in card array
         int* GetNumCards();
+        //returns true if the deck has cards
+        bool HasCards();
         //randomizes order of card array
         void Shuffle();
         //prints out number of cards

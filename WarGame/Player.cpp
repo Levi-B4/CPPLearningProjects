@@ -6,8 +6,13 @@
 using namespace std;
 
 //default constructor
-Player::Player(){
+Player::Player(char playerID){
     deck = new CardPile();
+    this->playerID = playerID;
+}
+
+char* Player::GetPlayerID(){
+    return &playerID;
 }
 
 //return players main card pile
@@ -22,8 +27,5 @@ CardPile* Player::GetPlayedCards(){
 
 //gets top card of the players deck
 Card* Player::playCard(){
-    int* card = new int[2];
-    card[0] = 5;
-    card[1] = 2;
-    return new Card(card, card + 1);
+
 }

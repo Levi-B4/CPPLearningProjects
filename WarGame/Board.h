@@ -2,6 +2,7 @@
 #define BOARD_H
 
 #include "Player.h"
+#include "WarPrinter.h"
 
 class Board{
     public:
@@ -15,19 +16,28 @@ class Board{
         ~Board();
 
     private:
+        //outputs game info to user
+        WarPrinter* printer;
+
         //players
-        Player* p1;
-        Player* p2;
+        Player* players[2];
+        int numPlayers;
 
         //attacking cards
-        Card* p1Attack;
-        Card* p2Attack;
+        Card* attackingCards[2];
 
         //holds cards in case of tie
-        CardPile* tieBounty;
+        CardPile* loot;
+
+        //deals cards to players
+        void DealCards();
 
         //logic for each round
         void playRound();
+        //set up player attacking cards
+        void PlayersAttack();
+        //compare  players' attacks
+        void ProcessBattle();
 };
 
 #endif // BOARD_H
