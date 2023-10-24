@@ -2,10 +2,6 @@
 #include "Player.h"
 #include "WarPrinter.h"
 
-#include <iostream>
-
-using namespace std;
-
 Board::Board(){
     //create players
     numPlayers = 2;
@@ -24,6 +20,17 @@ void Board::Play(){
 
     DealCards();
 
+    //loop till only one player has cards
+    for(int i = 1; players[0]->HasCards() && players[1]->HasCards(); i++){
+        printer->PrintRound(i);
+        PlayRound();
+    }
+
+    if(players[0]->HasCards()){
+        printer->PrintGameResults(players[1]->GetPlayerID(), players[0]->GetPlayerID());
+    }else{
+        printer->PrintGameResults(players[0]->GetPlayerID(), players[1]->GetPlayerID());
+    }
 
 }
 
@@ -63,7 +70,84 @@ void Board::DealCards(){
     }
 }
 
+void Board::PlayRound(){
+    //set up player attacks
+    PlayersAttack();
 
+    //if an attack is not available, end round
+    if(attackingCards[0] == nullptr || attackingCards[1] == nullptr){
+        return;
+    }
+
+    //compare each player's card and process the result
+    ProcessBattle();
+
+    //prints each player's card counts
+    for(int i = 0; i < numPlayers; i++){
+        printer->PrintPlayerDeckInfo(players[i]->GetPlayerID(),
+                                     players[i]->GetDeck()->GetNumCards(),
+                                     players[i]->GetPlayedCards()->GetNumCards());
+    }
+}
+
+//set up player attacks
+void Board::PlayersAttack(){
+    //get each player's attack
+    for(int i = 0; i < numPlayers; i++){
+        //set attack
+        attackingCards[i] = players[i]->PlayCard();
+        //verify attack is available
+        if(attackingCards[i] == nullptr){
+            printer->PrintDeckEmpty(players[i]->GetPlayerID());
+            //use played cards if there are any
+            if(players[i]->GetPlayedCards()->HasCards()){
+                players[i]->UsePlayedCards();
+                printer->PrintShuffle();
+                players[i]->GetDeck()->Shuffle();
+                attackingCards[i] = players[i]->PlayCard();
+
+            }
+            //if player has no cards, exit PlayersAttack()
+            else{
+                return;
+            }
+        }
+        //print player's attack
+        printer->PrintAttack(players[i]->GetPlayerID(), attackingCards[i]->GetValue(), attackingCards[i]->GetSuit());
+    }
+}
+
+void Board::ProcessBattle(){
+    //if player 1 card is higher than player 2's then give loot to player 1
+    if(*attackingCards[0]->GetValue() > *attackingCards[1]->GetValue()){
+        printer->PrintBattleWinner(players[0]->GetPlayerID());
+        TransferLoot(players[0]);
+    }else{
+        //if player 2 card is higher than player 1's then give loot to player 2
+        if(*attackingCards[0]->GetValue() < *attackingCards[1]->GetValue()){
+            printer->PrintBattleWinner(players[1]->GetPlayerID());
+            TransferLoot(players[1]);
+        }
+        //if both cards are equal add them to the bounty deck
+        else{
+            //print that there was a tie
+            printer->PrintTie();
+            for(int i = 0; i < numPlayers; i++){
+                loot->AddCardToPile(attackingCards[i]);
+            }
+            PlayRound();
+        }
+    }
+}
+
+void Board::TransferLoot(Player* player){
+    for(int i = 0; i < numPlayers; i++){
+        player->GetPlayedCards()->AddCardToPile(attackingCards[i]);
+    }
+    while(loot->HasCards()){
+        player->GetDeck()->AddCardToPile(loot->DrawCard());
+    }
+}
 
 Board::~Board(){
 

@@ -18,10 +18,12 @@ class Player{
         CardPile* GetPlayedCards();
 
         //draws card from players deck, if returns null then player loses
-        Card* playCard();
+        Card* PlayCard();
 
         //shuffles playedCards and replaces deck
-        void usePlayedCards();
+        void UsePlayedCards();
+
+        bool HasCards();
 
         //destructor
         ~Player();

@@ -38,9 +38,44 @@ void WarPrinter::PrintCard(int index, int* cardValue, int* cardSuit){
 
 //prints round
 void WarPrinter::PrintRound(int round){
-    cout << "========== Round " << round << " ==========" << endl;
+    cout << endl << "========== Round " << round << " ==========" << endl;
 }
 
+//prints player deck is empty
+void WarPrinter::PrintDeckEmpty(char* playerID){
+    cout << "Player " << *playerID << "'s deck is empty!" << endl;
+    cout << "They are using their played cards." << endl;
+}
+
+//prints player's attack
+void WarPrinter::PrintAttack(char* playerID, int* cardValue, int* cardSuit){
+
+    cout << "Player " << *playerID << " plays ";
+    PrintCard(cardValue, cardSuit);
+    cout << endl;
+}
+
+//prints winner of a battle
+void WarPrinter::PrintBattleWinner(char* playerID){
+    cout << "Player " << playerID << " wins the loot!" << endl << endl;
+}
+
+//prints when there is a tie
+void WarPrinter::PrintTie(){
+    cout << "It's a tie!" << endl;
+    cout << "The battle continues..." << endl << endl;
+}
+
+//prints players card counts
+void WarPrinter::PrintPlayerDeckInfo(char* playerID, int* numCardsDeck, int* numCardsPlayed){
+    cout << "Player " << *playerID << " has " << *numCardsDeck << " cards in their deck and ";
+    cout << *numCardsPlayed << " cards in their played pile" << endl;
+}
+
+//prints winner of the game
+void WarPrinter::PrintGameResults(char* loserID, char* winnerID){
+    cout << endl << "Player " << *loserID << " is out of cards. Player " << *winnerID << " wins!" << endl;
+}
 
 
 //logic for combining a card's value and suit, without new line

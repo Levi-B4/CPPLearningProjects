@@ -4,7 +4,7 @@
 class Card{
     public:
 
-        //constructor with given suit and value
+        //constructor with given suit and value; empty will be Card(0,14)
         Card(int value, int suit);
 
         //returns value of card

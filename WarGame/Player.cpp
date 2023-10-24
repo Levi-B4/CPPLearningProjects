@@ -26,6 +26,20 @@ CardPile* Player::GetPlayedCards(){
 }
 
 //gets top card of the players deck
-Card* Player::playCard(){
+Card* Player::PlayCard(){
+    if(deck->HasCards()){
+        return deck->DrawCard();
+    }
+    return nullptr;
+}
 
+void Player::UsePlayedCards(){
+    while(playedCards->HasCards()){
+        deck->AddCardToPile(playedCards->DrawCard());
+    }
+}
+
+//returns true if player has cards
+bool Player::HasCards(){
+    return (deck->HasCards() || playedCards->HasCards());
 }

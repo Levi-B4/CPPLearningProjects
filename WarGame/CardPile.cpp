@@ -36,8 +36,8 @@ bool CardPile::HasCards(){
 void CardPile::Shuffle(){
     //shuffle config
     int seed = time(0);
-    int numShuffles = 5;
-    int numShufflePiles = 3;
+    int numShuffles = 10;
+    int numShufflePiles = 5;
 
     //create piles to randomly assign cards to
     CardPile** shufflePiles = new CardPile*[numShufflePiles];
@@ -48,12 +48,13 @@ void CardPile::Shuffle(){
     for(int i = 0; i < numShuffles; i++){
         //distribute to shuffle piles
         while(HasCards()){
+            //keep seed high so it doesn't hit 0
+            if(seed < 100){
+                seed += numShufflePiles;
+                seed *= numShufflePiles + 2;
+            }
             shufflePiles[seed % numShufflePiles]->AddCardToPile(DrawCard());
             seed /= numShufflePiles;
-            //got to keep it higher than 0
-            if(seed < 100){
-                seed *= 5;
-            }
         }
 
         //add from from shuffle piles till they are empty
@@ -68,11 +69,6 @@ void CardPile::Shuffle(){
         delete shufflePiles[i];
     }
     delete shufflePiles;
-}
-
-//prints out number of cards
-void CardPile::PrintCards(){
-    //ToDo
 }
 
 //destructor

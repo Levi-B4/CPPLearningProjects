@@ -28,6 +28,24 @@ class WarPrinter{
         //prints requested round
         void PrintRound(int round);
 
+        //prints player deck is empty
+        void PrintDeckEmpty(char* playerID);
+
+        //prints player's attack
+        void PrintAttack(char* playerID, int* cardValue, int* cardSuit);
+
+        //print who wins an attack
+        void PrintBattleWinner(char* playerID);
+
+        //print when there is a tie
+        void PrintTie();
+
+        //prints player's card count
+        void PrintPlayerDeckInfo(char* playerID, int* numCardsDeck, int* numCardsPlayed);
+
+        //prints winner of the game
+        void PrintGameResults(char* loserID, char* winnerID);
+
         //default destructor
         ~WarPrinter();
 

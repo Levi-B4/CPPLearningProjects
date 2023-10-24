@@ -33,11 +33,13 @@ class Board{
         void DealCards();
 
         //logic for each round
-        void playRound();
+        void PlayRound();
         //set up player attacking cards
         void PlayersAttack();
         //compare  players' attacks
         void ProcessBattle();
+        //transfer loot to winner
+        void TransferLoot(Player* player);
 };
 
 #endif // BOARD_H
