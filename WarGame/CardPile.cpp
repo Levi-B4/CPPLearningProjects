@@ -3,6 +3,7 @@
 
 #include "CardPile.h"
 
+//default constructor
 CardPile::CardPile(){
     numCards = 0;
 }
@@ -25,6 +26,7 @@ int* CardPile::GetNumCards(){
     return &this->numCards;
 }
 
+//returns true if pile has cards
 bool CardPile::HasCards(){
     return numCards > 0;
 }
@@ -74,8 +76,8 @@ void CardPile::Shuffle(){
 
 //destructor
 CardPile::~CardPile(){
+    //while pile has cards, draw a card and delete it
     while(HasCards()){
         delete DrawCard();
     }
-
 };

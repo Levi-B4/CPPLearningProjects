@@ -23,6 +23,7 @@ class Player{
         //shuffles playedCards and replaces deck
         void UsePlayedCards();
 
+        //returns true if player has cards
         bool HasCards();
 
         //destructor

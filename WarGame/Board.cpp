@@ -2,6 +2,7 @@
 #include "Player.h"
 #include "WarPrinter.h"
 
+//default constructor
 Board::Board(){
     //create players
     numPlayers = 2;
@@ -18,6 +19,7 @@ void Board::Play(){
     //welcome user
     printer->PrintWelcome();
 
+    //gives each player their cards
     DealCards();
 
     //loop till only one player has cards
@@ -26,6 +28,7 @@ void Board::Play(){
         PlayRound();
     }
 
+    //output results
     if(players[0]->HasCards()){
         printer->PrintGameResults(players[1]->GetPlayerID(), players[0]->GetPlayerID());
     }else{
@@ -34,6 +37,7 @@ void Board::Play(){
 
 }
 
+//deal each player their cards
 void Board::DealCards(){
     //create deck as loot
     for(int i = 0; i < 4; i++){
@@ -70,6 +74,7 @@ void Board::DealCards(){
     }
 }
 
+//players a round of war, each player draws a card and winner gets both cards
 void Board::PlayRound(){
     //set up player attacks
     PlayersAttack();
@@ -130,6 +135,7 @@ void Board::PlayersAttack(){
     }
 }
 
+//compare each players attack and give winner loot
 void Board::ProcessBattle(){
     //if player 1 card is higher than player 2's then give loot to player 1
     if(*attackingCards[0]->GetValue() > *attackingCards[1]->GetValue()){
@@ -174,15 +180,19 @@ void Board::ProcessBattle(){
     }
 }
 
+//transfer loot deck and attacking cards to a player's played pile
 void Board::TransferLoot(Player* player){
+    //transfer attacking cards
     for(int i = 0; i < numPlayers; i++){
         player->GetPlayedCards()->AddCardToPile(attackingCards[i]);
     }
+    //transfer loot
     while(loot->HasCards()){
         player->GetDeck()->AddCardToPile(loot->DrawCard());
     }
 }
 
+//default destructor
 Board::~Board(){
     //delete printer
     delete printer;
@@ -190,5 +200,6 @@ Board::~Board(){
     for(int i = 0; i < numPlayers; i++){
         delete players[i];
     }
+    //delete loot
     delete loot;
 }

@@ -84,6 +84,7 @@ void WarPrinter::PrintBlankLine(){
     cout << endl;
 }
 
+//default destructor
 WarPrinter::~WarPrinter(){};
 
 //allows char* to be set to a const char* and still be deleted

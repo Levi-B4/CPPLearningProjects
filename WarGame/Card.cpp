@@ -16,4 +16,5 @@ int* Card::GetSuit(){
     return &suit;
 }
 
+//default destructor
 Card::~Card(){};

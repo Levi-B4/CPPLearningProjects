@@ -29,6 +29,7 @@ Card* Player::PlayCard(){
     return nullptr;
 }
 
+//transfers played cards to players deck
 void Player::UsePlayedCards(){
     while(playedCards->HasCards()){
         deck->AddCardToPile(playedCards->DrawCard());
@@ -40,7 +41,10 @@ bool Player::HasCards(){
     return (deck->HasCards() || playedCards->HasCards());
 }
 
+//default destructor
 Player::~Player(){
+    //delete players deck
     delete deck;
+    //delete played cards
     delete playedCards;
 }
