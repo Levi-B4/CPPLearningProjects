@@ -59,7 +59,7 @@ void WarPrinter::PrintAttack(char* playerID, int* cardValue, int* cardSuit){
 
 //prints winner of a battle
 void WarPrinter::PrintBattleWinner(char* playerID){
-    cout << "Player " << playerID << " wins the loot!" << endl << endl;
+    cout << "Player " << *playerID << " wins the loot!" << endl << endl;
 }
 
 //prints when there is a tie
