@@ -81,13 +81,6 @@ void Board::PlayRound(){
 
     //compare each player's card and process the result
     ProcessBattle();
-
-    //prints each player's card counts
-    for(int i = 0; i < numPlayers; i++){
-        printer->PrintPlayerDeckInfo(players[i]->GetPlayerID(),
-                                     players[i]->GetDeck()->GetNumCards(),
-                                     players[i]->GetPlayedCards()->GetNumCards());
-    }
 }
 
 //set up player attacks
@@ -109,6 +102,26 @@ void Board::PlayersAttack(){
             }
             //if player has no cards, exit PlayersAttack()
             else{
+                //if this is the second player, return the first players card
+                if(i == 1){
+                    players[0]->GetDeck()->AddCardToPile(attackingCards[0]);
+                }
+                /*
+                //if there is loot give it to the other player
+                switch(i){
+                    case 0:
+                        while(loot->HasCards()){
+                            players[1]->GetPlayedCards()->AddCardToPile(loot->DrawCard());
+                        }
+                        break;
+                    case 1:
+                        while(loot->HasCards()){
+                            players[0]->GetPlayedCards()->AddCardToPile(loot->DrawCard());
+                        }
+                        break;
+                }
+                */
+                //exit players attack
                 return;
             }
         }
@@ -122,19 +135,40 @@ void Board::ProcessBattle(){
     if(*attackingCards[0]->GetValue() > *attackingCards[1]->GetValue()){
         printer->PrintBattleWinner(players[0]->GetPlayerID());
         TransferLoot(players[0]);
+        //print each player's card counts
+        for(int i = 0; i < numPlayers; i++){
+            printer->PrintPlayerDeckInfo(players[i]->GetPlayerID(),
+                                         players[i]->GetDeck()->GetNumCards(),
+                                         players[i]->GetPlayedCards()->GetNumCards());
+        }
     }else{
         //if player 2 card is higher than player 1's then give loot to player 2
         if(*attackingCards[0]->GetValue() < *attackingCards[1]->GetValue()){
             printer->PrintBattleWinner(players[1]->GetPlayerID());
             TransferLoot(players[1]);
+            //print each player's card counts
+            for(int i = 0; i < numPlayers; i++){
+                printer->PrintPlayerDeckInfo(players[i]->GetPlayerID(),
+                                             players[i]->GetDeck()->GetNumCards(),
+                                             players[i]->GetPlayedCards()->GetNumCards());
+            }
         }
         //if both cards are equal add them to the bounty deck
         else{
             //print that there was a tie
             printer->PrintTie();
+            //moves attacking cards to the loot
             for(int i = 0; i < numPlayers; i++){
                 loot->AddCardToPile(attackingCards[i]);
             }
+            //print each player's card counts
+            for(int i = 0; i < numPlayers; i++){
+                printer->PrintPlayerDeckInfo(players[i]->GetPlayerID(),
+                                             players[i]->GetDeck()->GetNumCards(),
+                                             players[i]->GetPlayedCards()->GetNumCards());
+            }
+            printer->PrintBlankLine();
+            //restarts round
             PlayRound();
         }
     }
@@ -150,5 +184,11 @@ void Board::TransferLoot(Player* player){
 }
 
 Board::~Board(){
-
+    //delete printer
+    delete printer;
+    //delete players and their entities
+    for(int i = 0; i < numPlayers; i++){
+        delete players[i];
+    }
+    delete loot;
 }

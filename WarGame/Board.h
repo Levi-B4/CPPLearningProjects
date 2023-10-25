@@ -20,11 +20,11 @@ class Board{
         WarPrinter* printer;
 
         //players
-        Player* players[2];
+        Player** players = new Player*[2];;
         int numPlayers;
 
         //attacking cards
-        Card* attackingCards[2];
+        Card** attackingCards = new Card*[2];
 
         //holds cards in case of tie
         CardPile* loot;

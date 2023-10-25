@@ -3,9 +3,6 @@
 
 #include "CardPile.h"
 
-#include <iostream>
-using namespace std;
-
 CardPile::CardPile(){
     numCards = 0;
 }
@@ -36,7 +33,7 @@ bool CardPile::HasCards(){
 void CardPile::Shuffle(){
     //shuffle config
     int seed = time(0);
-    int numShuffles = 10;
+    int numShuffles = 20;
     int numShufflePiles = 5;
 
     //create piles to randomly assign cards to
@@ -50,21 +47,25 @@ void CardPile::Shuffle(){
         while(HasCards()){
             //keep seed high so it doesn't hit 0
             if(seed < 100){
+                //add in case of seed being 0 at start
                 seed += numShufflePiles;
+                //multiply by number greater than the number of shuffle piles to keep seed high
                 seed *= numShufflePiles + 2;
             }
+            //put card in a random shuffle pile based off of the seed
             shufflePiles[seed % numShufflePiles]->AddCardToPile(DrawCard());
+            //divide by the number of piles to make next loop different
             seed /= numShufflePiles;
         }
 
-        //add from from shuffle piles till they are empty
+        //add from all of the shuffle piles till they are empty
         for(int j = 0; j < numShufflePiles; j++){
             while(shufflePiles[j]->HasCards()){
                 AddCardToPile(shufflePiles[j]->DrawCard());
             }
         }
     }
-
+    //delete all shuffle piles
     for(int i = 0; i < numShufflePiles; i++){
         delete shufflePiles[i];
     }
@@ -73,4 +74,8 @@ void CardPile::Shuffle(){
 
 //destructor
 CardPile::~CardPile(){
+    while(HasCards()){
+        delete DrawCard();
+    }
+
 };

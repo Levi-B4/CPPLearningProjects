@@ -1,7 +1,4 @@
-#include <iostream>
 #include "Card.h"
-
-using namespace std;
 
 //default constructor
 Card::Card(int value, int suit){
@@ -18,3 +15,5 @@ int* Card::GetValue(){
 int* Card::GetSuit(){
     return &suit;
 }
+
+Card::~Card(){};

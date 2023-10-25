@@ -3,29 +3,31 @@
 
 #include <iostream>
 
-using namespace std;
+using std::cout;
+using std::endl;
 
 //default constructor
 WarPrinter::WarPrinter(){};
 
 //welcomes user
 void WarPrinter::PrintWelcome(){
-    cout << "Welcome to the Game of War!" << endl << endl;
+    cout << "Welcome to the Game of War!" << endl;
+    cout << "----------------------------------" << endl;
 }
 
 //notification of shuffling
 void WarPrinter::PrintShuffle(){
-    cout << "Shuffling..." << endl;
+    cout << endl << "Shuffling..." <<  endl << endl;
 }
 
 //initial deck intro
 void WarPrinter::PrintInitialDeckIntro(){
-    cout << endl << "Initial decks: " << endl;
+    cout << "Initial decks: " << endl;
 }
 
 //prints player info at start of game
 void WarPrinter::PrintPlayerInfo(char* playerId, int numCards){
-    cout << "Player " << *playerId << ": " << endl;
+    cout << endl << "Player " << *playerId << ": " << endl;
     cout << "There are " << numCards << " cards in the deck" << endl;
 }
 
@@ -77,69 +79,79 @@ void WarPrinter::PrintGameResults(char* loserID, char* winnerID){
     cout << endl << "Player " << *loserID << " is out of cards. Player " << *winnerID << " wins!" << endl;
 }
 
+//prints blank line
+void WarPrinter::PrintBlankLine(){
+    cout << endl;
+}
+
+WarPrinter::~WarPrinter(){};
+
+//allows char* to be set to a const char* and still be deleted
+void WarPrinter::constCStringToCString(char* cString, const char* constCString){
+    int i = 0;
+    do{
+			cString[i] = constCString[i];
+			i++;
+	}while(constCString[i - 1] != '\0');
+}
 
 //logic for combining a card's value and suit, without new line
 void WarPrinter::PrintCard(int* value, int* suit){
 
-    //instantiate array
-    char* valueString = new char[20];
+
+
+    //instantiate value c string
+    char* valueString = new char[6];
 
     //array of char arrays for possible values
     char** possibleValues = new char*[13]{
-        "one",
-        "two",
-        "three",
-        "four",
-        "five",
-        "six",
-        "seven",
-        "eight",
-        "nine",
-        "ten",
-        "jack",
-        "queen",
-        "king"
+        (char*)"one",
+        (char*)"two",
+        (char*)"three",
+        (char*)"four",
+        (char*)"five",
+        (char*)"six",
+        (char*)"seven",
+        (char*)"eight",
+        (char*)"nine",
+        (char*)"ten",
+        (char*)"jack",
+        (char*)"queen",
+        (char*)"king"
     };
 
     //sets value of valueString to corresponding array in possibleValues
-    valueString = possibleValues[*value - 1];
+    constCStringToCString(valueString, possibleValues[*value - 1]);
 
     //deletes possibleValues array
     delete possibleValues;
 
 
     //instantiating array for largest suit name (diamonds)
-    char* suitString = new char[20];
+    char* suitString = new char[9];
 
     //switch statement to return suit c string
     switch(*suit){
         case 0:
-            suitString = "clubs";
+            constCStringToCString(suitString, "clubs");
             break;
         case 1:
-            suitString = "diamonds";
+            constCStringToCString(suitString, "diamonds");
             break;
         case 2:
-            suitString = "hearts";
+            constCStringToCString(suitString, "hearts");
             break;
         case 3:
-            suitString = "spades";
+            constCStringToCString(suitString, "spades");
             break;
         default:
-            suitString = "Blank";
+            constCStringToCString(suitString, "Blank");
             break;
     }
+
     cout << valueString << " of " << suitString;
-    /* TODO: delete these
-    for(int i = 0; i < 10 ;i++){
-        valueString[i] == 0;
-    }
+
+    //delete strings
     delete valueString;
-    for(int i = 0; i < 10 ;i++){
-        if(suitString[i] == '\0'){
-            suitString[i] == 0;
-        }
-    }
     delete suitString;
-    */
 }

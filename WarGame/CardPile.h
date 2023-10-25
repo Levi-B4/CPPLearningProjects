@@ -10,8 +10,6 @@ class CardPile{
 
         //adds card to end of card array
         void AddCardToPile(Card* card);
-        //remove card from pile
-        void RemoveCardFromPile(Card* card);
         //simulates drawing a card
         Card* DrawCard();
         //returns total number of cards in card array

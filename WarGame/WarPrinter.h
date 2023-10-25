@@ -46,12 +46,18 @@ class WarPrinter{
         //prints winner of the game
         void PrintGameResults(char* loserID, char* winnerID);
 
+        //prints blank line
+        void PrintBlankLine();
+
         //default destructor
         ~WarPrinter();
 
     private:
         //logic for combining a card's value and suit, without new line
         void PrintCard(int* cardValue, int* cardSuit);
+
+        //allows char* to be set to a const char* and still be deleted
+        void constCStringToCString(char* cString, const char* constCString);
 };
 
 

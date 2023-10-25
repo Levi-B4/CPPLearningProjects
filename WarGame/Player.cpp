@@ -1,10 +1,6 @@
 #include "Player.h"
 #include "CardPile.h"
 
-#include <iostream>
-
-using namespace std;
-
 //default constructor
 Player::Player(char playerID){
     deck = new CardPile();
@@ -42,4 +38,9 @@ void Player::UsePlayedCards(){
 //returns true if player has cards
 bool Player::HasCards(){
     return (deck->HasCards() || playedCards->HasCards());
+}
+
+Player::~Player(){
+    delete deck;
+    delete playedCards;
 }
