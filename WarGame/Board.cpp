@@ -111,22 +111,6 @@ void Board::PlayersAttack(){
                 if(i == 1){
                     players[0]->GetDeck()->AddCardToPile(attackingCards[0]);
                 }
-                /*
-                //if there is loot give it to the other player
-                switch(i){
-                    case 0:
-                        while(loot->HasCards()){
-                            players[1]->GetPlayedCards()->AddCardToPile(loot->DrawCard());
-                        }
-                        break;
-                    case 1:
-                        while(loot->HasCards()){
-                            players[0]->GetPlayedCards()->AddCardToPile(loot->DrawCard());
-                        }
-                        break;
-                }
-                */
-                //exit players attack
                 return;
             }
         }
