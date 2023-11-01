@@ -29,7 +29,7 @@ void myStack(int* intArray, int arraySize){
     cout << endl;
 }
 
-//may used when serving customers.
+//may be used when serving customers.
 //each customer would be put into a queue until resources are available
 //then the first one would be accessed and serviced
 void myQueue(int* intArray, int arraySize){
