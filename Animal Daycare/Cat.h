@@ -13,7 +13,7 @@ class Cat : public Animal{
         Cat(string name, int age, bool isOutDoor);
 
         //virtual print: outputs cat info
-        void Print();
+        void Print() override;
 
         //Getter: GetIsOutdoor
         bool GetIsOutdoor();

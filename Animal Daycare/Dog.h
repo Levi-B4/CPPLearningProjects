@@ -20,7 +20,7 @@ class Dog : public Animal
         //Getter: GetFavoriteToy
         string GetFavoriteToy();
         //Setter: SetFavoriteToy
-        void SetFavoriteToy(string favoriteToy);
+        void SetFavoriteToy();
 
         //default destructor
         ~Dog();

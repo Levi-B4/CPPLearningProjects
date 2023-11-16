@@ -1,19 +1,24 @@
-
 #include <string>
+
+#include "Animal.h"
 
 class AnimalDaycare{
 public:
-    //default constructor
+    //Constructor
     AnimalDaycare();
+
     //daycare logic
     void Run();
-    //default destructor
+
+    //Destructor
     ~AnimalDaycare();
 
 private:
+    //linkedList of all animals
+    AnimalList animals;
 
-    //linkedList allAnimals
-
+    //loads animal from external file to a linked list
+    void LoadAnimals();
 
     //outputs list of all animals
     void ViewAnimals();

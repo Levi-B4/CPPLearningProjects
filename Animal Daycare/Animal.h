@@ -7,26 +7,26 @@ using namespace std;
 
 class Animal{
     public:
-        //constructor - parameters: name, age
-        Animal();
+        ////constructor - parameters: name, age
+        //Animal();
 
         //virtual print: outputs animal info
         virtual void Print();
 
-        //Getter: GetDailyFee
-        int GetDailyFee();
+        //Getter - GetDailyFee
+        double GetDailyFee();
 
-        //Getter: GetName
+        //Getter - GetName
         string GetName();
-        //Setter: SetName
+        //Setter - SetName
         void SetName(string name);
 
-        //Getter: GetAge
+        //Getter - GetAge
         int GetAge();
-        //Setter: SetAge
+        //Setter - SetAge
         void setAge(int age);
 
-        //default destructor
+        //destructor
         ~Animal();
 
     protected:

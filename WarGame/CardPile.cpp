@@ -67,6 +67,7 @@ void CardPile::Shuffle(){
             }
         }
     }
+
     //delete all shuffle piles
     for(int i = 0; i < numShufflePiles; i++){
         delete shufflePiles[i];
