@@ -1,14 +1,14 @@
 #include <iostream>
 #include <string>
-#include <list>
 #include <fstream>
 #include <array>
+#include <sstream>
 
-#include "Cat.h"
-#include "Dog.h"
-#include "Rabbit.h"
-#include "Animal.h"
-#include "AnimalDaycare.h"
+#include "../Headers/Cat.h"
+#include "../Headers/Dog.h"
+#include "../Headers/Rabbit.h"
+#include "../Headers/Animal.h"
+#include "../Headers/AnimalDaycare.h"
 
 using namespace std;
 
@@ -20,24 +20,20 @@ void AnimalDaycare::Run(){
     cout << "Welcome to Animal Day Care!\n" <<
             "_____________________________" << endl;
 
+    //loads animals from external file
     LoadAnimals();
-
-    for(iterator i = animals.begin(); i != animals.end(); i++){
-        cout << i->GetName();
-    }
 
     //user menu selection
     int userSelection;
+
     //true if user selects exit
     bool exit = false;
 
     //run program till user selects exit
     while(!exit){
-        //resetting user selection
-        userSelection = -1;
 
         //menu
-        cout << "What would you like to do? (enter the number of your selection)\n" <<
+        cout << "\nWhat would you like to do? (enter the number of your selection)\n" <<
                 "0: Exit\n" <<
                 "1: View all pets\n" <<
                 "2: Drop-off pet\n" <<
@@ -65,7 +61,7 @@ void AnimalDaycare::Run(){
                 exit = true;
                 break;
             case 1:
-                ViewAnimals();
+                animals.Print();
                 break;
             case 2:
                 AddAnimal();
@@ -83,72 +79,60 @@ void AnimalDaycare::Run(){
 //default destructor
 AnimalDaycare::~AnimalDaycare(){};
 
+//loads animals from external file
 void AnimalDaycare::LoadAnimals(){
     //instantiate file
     ifstream inFile;
 
     //open file
-    inFile.open("Animals.txt");
+    inFile.open("DaycareAnimals.txt");
 
     //parse file
-    string inputLine
+    string inputLine;
     stringstream animalInput;
     array<string, 4> animalInfo;
     int i;
 
     //iterate file and add animals to linked list animals
-    while(getline(infile,input)){
+    while(getline(inFile,inputLine)){
         //save line as a string stream
-        animalInput animalInfo(input);
+        animalInput << inputLine;
 
-        //iterate through each comma separated value
+        //iterate through stream and add each comma separated value to an array
         i = 0;
-        while(getline(animalInput, input, ',')){
-            animalInfo[i] = input;
+        while(getline(animalInput, inputLine, ',')){
+            animalInfo[i] = inputLine;
             i++;
         }
 //may use enum and switch here
         //create animal in list based off of input
         if(animalInfo[0] == "cat"){
-            animals.push_back(Cat(animalInfo[1], animalInfo[2], animalInfo[3]));
+            animals.Insert(new Cat(animalInfo[1], stoi(animalInfo[2]), animalInfo[3] == "true"));
         } else{
             if(animalInfo[0] == "dog"){
-                animals.push_back(Dog(animalInfo[1], animalInfo[2], animalInfo[3]));
+                animals.Insert(new Dog(animalInfo[1], stoi(animalInfo[2]), animalInfo[3]));
             } else {
-            animals.push_back(Rabbit(animalInfo[1], animalInfo[2], animalInfo[3]));
+            animals.Insert(new Rabbit(animalInfo[1], stoi(animalInfo[2]), stoi(animalInfo[3])));
             }
         }
+        //empty string stream
+        animalInput.clear();
     }
+    //close file in which animals are saved
     inFile.close();
 }
 
-
-
-//outputs list of all animals
-/*
---- Cage # ---
-Animal: <type>
-Name: <name>
-Age: <age>
-Fee: <fee>
-other info: <other>
-*/
-void AnimalDaycare::ViewAnimals(){
-    cout << "Not yet implimented" << endl;
-}
-
-//drop off animal
 //get animal type
 //get the animals info (you may assume it is entered correctly)
 //create animal and add to linked list
 void AnimalDaycare::AddAnimal(){
-    cout << "Not yet implimented" << endl;
+    cout << "AddAnimal not yet implimented" << endl;
 }
 
 //pick up animal
 //ask for cage number
 //remove animal from linked list
 void AnimalDaycare::RemoveAnimal(){
-    cout << "Not yet implimented" << endl;
+    cout << "RemoveAnimal not yet implimented" << endl;
 }
 

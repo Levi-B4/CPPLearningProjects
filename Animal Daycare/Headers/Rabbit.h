@@ -12,11 +12,12 @@ class Rabbit : public Animal{
         //constructor - parameters: name, age, numberOfCarrots
         Rabbit(string name, int age, int numberOfCarrots);
 
-        //virtual print: outputs rabbit info
+        //overrides Animal::Print() - outputs dog info
         void Print();
 
         //Getter: GetNumberOfCarrots
         int GetNumberOfCarrots();
+
         //Setter: SetNumberOfCarrots
         void SetNumberOfCarrots(int numberOfCarrots);
 

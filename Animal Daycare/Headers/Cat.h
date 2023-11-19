@@ -12,11 +12,12 @@ class Cat : public Animal{
         //constructor - parameters: name, age, isOutDoor
         Cat(string name, int age, bool isOutDoor);
 
-        //virtual print: outputs cat info
+        //overrides Animal::Print() - outputs cat info
         void Print() override;
 
         //Getter: GetIsOutdoor
         bool GetIsOutdoor();
+
         //Setter: SetIsOutdoor
         void SetIsOutdoor(bool isOutdoor);
 
@@ -26,6 +27,7 @@ class Cat : public Animal{
     private:
         //daily cost to keep cat at daycare
         int dailyFee = 25;
+
         //true if cat is an outdoor cat
         bool isOutdoor;
 

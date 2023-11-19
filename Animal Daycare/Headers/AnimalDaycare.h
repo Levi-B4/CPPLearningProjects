@@ -1,6 +1,7 @@
 #include <string>
 
 #include "Animal.h"
+#include "AnimalList.h"
 
 class AnimalDaycare{
 public:
@@ -19,9 +20,6 @@ private:
 
     //loads animal from external file to a linked list
     void LoadAnimals();
-
-    //outputs list of all animals
-    void ViewAnimals();
 
     //drop-off animal
     void AddAnimal();

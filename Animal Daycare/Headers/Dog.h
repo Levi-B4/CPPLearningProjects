@@ -14,11 +14,12 @@ class Dog : public Animal
         //constructor - parameters: name, age, favoriteToy
         Dog(string name, int age, string favoriteToy);
 
-        //virtual print: outputs dog info
+        //overrides Animal::Print() - outputs dog info
         void Print();
 
         //Getter: GetFavoriteToy
         string GetFavoriteToy();
+
         //Setter: SetFavoriteToy
         void SetFavoriteToy();
 

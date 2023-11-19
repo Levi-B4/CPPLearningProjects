@@ -7,11 +7,11 @@ using namespace std;
 
 class Animal{
     public:
-        ////constructor - parameters: name, age
-        //Animal();
+        //constructor - parameters: name, age
+        Animal(string name, int age);
 
-        //virtual print: outputs animal info
-        virtual void Print();
+        //pure virtual print: children use to print out animal info
+        virtual void Print() = 0;
 
         //Getter - GetDailyFee
         double GetDailyFee();
@@ -26,7 +26,7 @@ class Animal{
         //Setter - SetAge
         void setAge(int age);
 
-        //destructor
+        //default destructor
         ~Animal();
 
     protected:

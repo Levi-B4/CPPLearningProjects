@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>238</x>
+      <y>196</y>
+      <w>147</w>
+      <h>161</h>
+    </coordinates>
+    <panel_attributes>Animal
+--
+- name: string
+- age: int
+/# dailyFee: double/
+--
+/+ Print(): void/
++ GetName(): string
++ SetName(name: string): void
++ GetAge(): int
++ SetAge(age: int): void
++ GetDailyFee(): double
+--
+*Responsibilities*
+-- manages animal properties
+//styles
+style=autoresize</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>7</x>
+      <y>427</y>
+      <w>189</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>Cat
+--
+- dailyFee: double = 25
+- isOutdoor: boolean
+--
++ Print(): void
++ GetIsOutdoor(): boolean
++ SetIsOutdoor(isOutdoor: boolean): void
+//styles
+style=autoresize</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>525</x>
+      <y>154</y>
+      <w>147</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>Daycare
+--
+- petsInDaycare: AnimalList
+--
++ Run(): void
+- LoadAnimals(): void
+- ViewAnimals(): void
+- AddfAnimal(): void
+- RemoveAnimal(): void
+--
+*Responsibilities*
+-- manages linked list of animals
+//styles
+style=autoresize</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>98</x>
+      <y>350</y>
+      <w>217</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>290.0;10.0;290.0;50.0;10.0;50.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>294</x>
+      <y>350</y>
+      <w>21</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>294</x>
+      <y>350</y>
+      <w>231</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0;310.0;50.0;310.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>378</x>
+      <y>343</y>
+      <w>406</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>560.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>0</x>
+      <y>588</y>
+      <w>203</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>read in file
+--
+cat, &lt;name&gt;, &lt;age&gt;, &lt;isOutdoor&gt;
+dog, &lt;name&gt;, &lt;age&gt;, &lt;favoriteToy&gt;
+rabbit, &lt;name&gt;, &lt;age&gt;, &lt;numberOfCarrots&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>203</x>
+      <y>427</y>
+      <w>196</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>Dog
+--
+- dailyFee: double = 50
+- favoriteToy: string
+--
++ Print(): void
++ GetFavoriteToy(): string
++ SetFavoriteToy(favoriteToy: string): void
+//styles
+style=autoresize</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>406</x>
+      <y>427</y>
+      <w>217</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>Rabbit
+--
+- dailyFee: double = 15
+- numberOfCarrots
+--
++ Print(): void
++ GetNumberOfCarrots(): int
++ SetNumberOfCarrots(numberOfCarrots): void
+//styles
+style=autoresize</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>196</x>
+      <y>616</y>
+      <w>56</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>60.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>238</x>
+      <y>588</y>
+      <w>98</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>type=decision
+Select an option</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>280</x>
+      <y>539</y>
+      <w>14</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>type=flow_final</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>280</x>
+      <y>546</y>
+      <w>49</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+0: Exit</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>308</x>
+      <y>567</y>
+      <w>91</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+1: View Animals</panel_attributes>
+    <additional_attributes>110.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>385</x>
+      <y>560</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>Print animals</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>329</x>
+      <y>609</y>
+      <w>119</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+2: Drop Off Animal</panel_attributes>
+    <additional_attributes>150.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>434</x>
+      <y>609</y>
+      <w>98</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>What animal (c, d, r)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>308</x>
+      <y>630</y>
+      <w>91</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+3: Pick Up Animal</panel_attributes>
+    <additional_attributes>110.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>385</x>
+      <y>665</y>
+      <w>84</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>which animal?
+Enter Cage #:  </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>280</x>
+      <y>567</y>
+      <w>483</w>
+      <h>196</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+fg=BLACK</panel_attributes>
+    <additional_attributes>10.0;130.0;10.0;260.0;670.0;260.0;670.0;10.0;250.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>630</x>
+      <y>609</y>
+      <w>91</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>enter their info
+name,age,special</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>525</x>
+      <y>609</y>
+      <w>119</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+assume entered
+correctly</panel_attributes>
+    <additional_attributes>10.0;20.0;150.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>637</x>
+      <y>651</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>create animal</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>630</x>
+      <y>693</y>
+      <w>84</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>Add to linked list</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>665</x>
+      <y>630</y>
+      <w>21</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;30.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>665</x>
+      <y>672</y>
+      <w>21</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;30.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>490</x>
+      <y>665</y>
+      <w>84</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>Remove animal from linked list
+//styles
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>462</x>
+      <y>672</y>
+      <w>42</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>40.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>616</x>
+      <y>714</y>
+      <w>70</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;50.0;50.0;50.0;80.0;30.0;80.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>462</x>
+      <y>693</y>
+      <w>84</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;80.0;50.0;80.0;100.0;50.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>770</x>
+      <y>154</y>
+      <w>182</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>AnimalLinkedList
+--
+- head: Node*
+--
++ Insert(animal: Animal): void
++ RemoveAt(index: int): void
++ Print(): void
+--
+*Responsibilities*
+-- linked list for animals
+-- allows removing animals at any index</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>665</x>
+      <y>224</y>
+      <w>119</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;150.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>378</x>
+      <y>224</y>
+      <w>161</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=*</panel_attributes>
+    <additional_attributes>210.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>189</x>
+      <y>364</y>
+      <w>21</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>294</x>
+      <y>350</y>
+      <w>21</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>770</x>
+      <y>343</y>
+      <w>147</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>Node
+--
+- next: Node* = nullptr
+- value: Animal*
+--
++ getNext(): Node*
++ setNext(next: Node*): void
++ getValue(): Animal*
+--
+-- elements of AnimalLinkedList</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>819</x>
+      <y>259</y>
+      <w>28</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=*</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+</diagram>
