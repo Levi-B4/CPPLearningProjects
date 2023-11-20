@@ -16,7 +16,6 @@ Cat::Cat(){
     //save input as string stream
     string userInput;
     stringstream catInfo;
-    cin.clear();
     getline(cin, userInput);
     catInfo << userInput;
 
@@ -26,7 +25,7 @@ Cat::Cat(){
     //process cat's age
     string ageString;
     getline(catInfo, ageString, ',');
-    //age = stoi(ageString);
+    age = stoi(ageString);
 
     //process if cat is indoor or outdoor
     string isOutdoorString;
