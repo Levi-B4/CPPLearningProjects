@@ -11,6 +11,9 @@ using namespace std;
 class Dog : public Animal
 {
     public:
+        //default constructor - no pameters
+        Dog();
+
         //constructor - parameters: name, age, favoriteToy
         Dog(string name, int age, string favoriteToy);
 

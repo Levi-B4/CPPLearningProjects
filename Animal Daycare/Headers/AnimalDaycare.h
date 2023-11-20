@@ -21,6 +21,9 @@ private:
     //loads animal from external file to a linked list
     void LoadAnimals();
 
+    //save animals to external file
+    void SaveAnimals();
+
     //drop-off animal
     void AddAnimal();
 

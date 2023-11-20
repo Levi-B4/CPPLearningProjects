@@ -59,7 +59,6 @@ void AnimalList::Print(){
         //increment to next animal
         currentNode = currentNode->GetNext();
     }
-
 }
 
 

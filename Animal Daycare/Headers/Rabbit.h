@@ -9,6 +9,9 @@ using namespace std;
 
 class Rabbit : public Animal{
     public:
+        //default constructor - no pameters
+        Rabbit();
+
         //constructor - parameters: name, age, numberOfCarrots
         Rabbit(string name, int age, int numberOfCarrots);
 

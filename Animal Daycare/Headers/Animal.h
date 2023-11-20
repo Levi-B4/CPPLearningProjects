@@ -7,6 +7,9 @@ using namespace std;
 
 class Animal{
     public:
+        //default constructor - no parameters
+        Animal();
+
         //constructor - parameters: name, age
         Animal(string name, int age);
 

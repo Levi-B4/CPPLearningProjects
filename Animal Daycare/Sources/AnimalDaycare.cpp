@@ -55,6 +55,9 @@ void AnimalDaycare::Run(){
             cin >> userSelection;
         }
 
+        //ignores 100 characters or until there is a new line character
+        cin.ignore(100, '\n');
+
         //process user selection
         switch(userSelection){
             case 0:
@@ -122,11 +125,30 @@ void AnimalDaycare::LoadAnimals(){
     inFile.close();
 }
 
+//save animals to external file
+void AnimalDaycare::SaveAnimals(){
+    cout << "save not implemented" << endl;
+}
+
 //get animal type
 //get the animals info (you may assume it is entered correctly)
 //create animal and add to linked list
 void AnimalDaycare::AddAnimal(){
-    cout << "AddAnimal not yet implimented" << endl;
+
+    //prompt user for animal type
+    string animalType;
+    cout << "What animal are you dropping off? (c,d,r): ";
+    getline(cin, animalType);
+
+    (animalType == "c") ? animals.Insert(new Cat())
+        : (animalType == "d") ? animals.Insert(new Dog())
+        :  animals.Insert(new Rabbit());
+
+    /*
+    if("c") animals.Insert(new Cat());
+    if("d") animals.Insert(new Dog());
+    if("r") animals.Insert(new Rabbit());
+    */
 }
 
 //pick up animal
