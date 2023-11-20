@@ -25,12 +25,44 @@ void AnimalList::Insert(Animal* animal){
 
 //removes an animal - parameters: int index
 void AnimalList::RemoveAt(int index){
-    std::cout << "removal not yet implemented" << std::endl;
-    /*
-    if n = 0, delete head, head = head->next
-    n-1 -> next = n+1
-    delete n
-    */
+
+    //accounts for first cage being 1
+    index--;
+
+    //temporarily holds node
+    Node* tempNodePtr;
+
+    //if first index, set head to the next node
+    if(index == 0){
+
+        //save next node
+        tempNodePtr = head->GetNext();
+
+        //delete head
+        delete head;
+
+        //set head to next node
+        head = tempNodePtr;
+
+        return;
+    }
+
+    //tracks current node
+    Node* currentNode = head;
+
+    //iterate through list until at node before index
+    for(int i = 0; i < index - 1; i++){
+        currentNode = currentNode->GetNext();
+    }
+
+    //get node after index
+    tempNodePtr = currentNode->GetNext()->GetNext();
+
+    //delete index
+    delete currentNode->GetNext();
+
+    //set next node for the node before index, to the node after index
+    currentNode->SetNext(tempNodePtr);
 }
 
 //outputs list of all animals

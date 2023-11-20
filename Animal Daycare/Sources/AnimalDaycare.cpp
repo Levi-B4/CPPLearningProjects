@@ -143,18 +143,24 @@ void AnimalDaycare::AddAnimal(){
     (animalType == "c") ? animals.Insert(new Cat())
         : (animalType == "d") ? animals.Insert(new Dog())
         :  animals.Insert(new Rabbit());
-
-    /*
-    if("c") animals.Insert(new Cat());
-    if("d") animals.Insert(new Dog());
-    if("r") animals.Insert(new Rabbit());
-    */
 }
 
 //pick up animal
 //ask for cage number
 //remove animal from linked list
 void AnimalDaycare::RemoveAnimal(){
-    cout << "RemoveAnimal not yet implimented" << endl;
+
+    //prompt user for cage number
+    int cageNumber;
+    cout << "What animal would you like to pick up?\n";
+    cout << "Enter Cage Number: ";
+
+    cin >> cageNumber;
+    //ignores 5 characters or until there is a new line character
+    cin.ignore(5, '\n');
+
+    animals.RemoveAt(cageNumber);
+
+    cout << "\n\nThank you!" << endl;
 }
 
