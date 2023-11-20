@@ -13,7 +13,18 @@ Cat::Cat(string name, int age, bool isOutDoor)
 
 //overrides Animal::Print() - outputs cat info
 void Cat::Print(){
-    cout << "printed" << endl;
+    cout << "Animal: Cat" << endl;
+    cout << "Name: " << name << endl;
+    cout << "Age: " << age << endl;
+    cout << "Fee: " << dailyFee << endl;
+    cout << "Indoor/Outdoor: ";
+
+    //convert isOutdoor to desired output
+    if(isOutdoor){
+        cout << "Outdoor" << endl;
+    } else {
+        cout << "indoor" << endl;
+    }
 }
 
 Cat::~Cat(){};

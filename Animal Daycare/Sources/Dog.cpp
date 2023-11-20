@@ -13,7 +13,11 @@ Dog::Dog(string name, int age, string favoriteToy)
 
 //overrides Animal::Print() - outputs dog info
 void Dog::Print(){
-    cout << "printed" << endl;
+    cout << "Animal: Dog" << endl;
+    cout << "Name: " << name << endl;
+    cout << "Age: " << age << endl;
+    cout << "Fee: " << dailyFee << endl;
+    cout << "Favorite Toy: " << favoriteToy << endl;
 }
 
 //default destructor

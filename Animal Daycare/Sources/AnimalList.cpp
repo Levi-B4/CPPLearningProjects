@@ -43,5 +43,31 @@ Fee: <fee>
 other info: <other>
 */
 void AnimalList::Print(){
-    std::cout << "print not yet implemented" << std::endl;
+    //if no animals, notify user
+    if(head == nullptr){
+        cout << "\nno animals are in the daycare." << endl;
+        return;
+    }
+
+    //iterate through list and output animal information
+    Node* currentNode = head;
+    for(int i = 1; currentNode != nullptr; i++){
+        cout << "\n--- Cage " << i << " ---" << endl;
+        //call Print() of the animal
+        currentNode->GetValue()->Print();
+
+        //increment to next animal
+        currentNode = currentNode->GetNext();
+    }
+
 }
+
+
+
+
+
+
+
+
+
+

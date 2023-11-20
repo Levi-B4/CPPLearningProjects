@@ -33,9 +33,9 @@ class Animal{
         //daily cost to keep animal at daycare
         int dailyFee;
 
-    private:
         //name of animal
         string name;
+
         //age of animal
         int age;
 
