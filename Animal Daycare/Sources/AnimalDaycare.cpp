@@ -1,8 +1,5 @@
 #include <iostream>
 #include <string>
-#include <fstream>
-#include <array>
-#include <sstream>
 
 #include "../Headers/Cat.h"
 #include "../Headers/Dog.h"
@@ -21,7 +18,7 @@ void AnimalDaycare::Run(){
             "_____________________________" << endl;
 
     //loads animals from external file
-    LoadAnimals();
+    animals.LoadAnimals();
 
     //user menu selection
     int userSelection;
@@ -61,15 +58,19 @@ void AnimalDaycare::Run(){
         //process user selection
         switch(userSelection){
             case 0:
+                //exit program loop
                 exit = true;
                 break;
             case 1:
+                //output animals
                 animals.Print();
                 break;
             case 2:
+                //add animal to list
                 AddAnimal();
                 break;
             case 3:
+                //remove animal from list
                 RemoveAnimal();
                 break;
             default:
@@ -77,58 +78,17 @@ void AnimalDaycare::Run(){
                 break;
         }
     }
+
+    cout << "Saving pets..." << endl;
+
+    //save animals to external file
+    animals.SaveAnimals();
+
+    cout << "Pets saved!" << endl;
 }
 
 //default destructor
 AnimalDaycare::~AnimalDaycare(){};
-
-//loads animals from external file
-void AnimalDaycare::LoadAnimals(){
-    //instantiate file
-    ifstream inFile;
-
-    //open file
-    inFile.open("DaycareAnimals.txt");
-
-    //parse file
-    string inputLine;
-    stringstream animalInput;
-    array<string, 4> animalInfo;
-    int i;
-
-    //iterate file and add animals to linked list animals
-    while(getline(inFile,inputLine)){
-        //save line as a string stream
-        animalInput << inputLine;
-
-        //iterate through stream and add each comma separated value to an array
-        i = 0;
-        while(getline(animalInput, inputLine, ',')){
-            animalInfo[i] = inputLine;
-            i++;
-        }
-//may use enum and switch here
-        //create animal in list based off of input
-        if(animalInfo[0] == "cat"){
-            animals.Insert(new Cat(animalInfo[1], stoi(animalInfo[2]), animalInfo[3] == "true"));
-        } else{
-            if(animalInfo[0] == "dog"){
-                animals.Insert(new Dog(animalInfo[1], stoi(animalInfo[2]), animalInfo[3]));
-            } else {
-            animals.Insert(new Rabbit(animalInfo[1], stoi(animalInfo[2]), stoi(animalInfo[3])));
-            }
-        }
-        //empty string stream
-        animalInput.clear();
-    }
-    //close file in which animals are saved
-    inFile.close();
-}
-
-//save animals to external file
-void AnimalDaycare::SaveAnimals(){
-    cout << "save not implemented" << endl;
-}
 
 //get animal type
 //get the animals info (you may assume it is entered correctly)

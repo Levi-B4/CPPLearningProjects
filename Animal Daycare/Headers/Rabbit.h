@@ -18,6 +18,9 @@ class Rabbit : public Animal{
         //overrides Animal::Print() - outputs dog info
         void Print();
 
+        //overrides Animal:: GetSaveString() - returns animal as string for file saving
+        string GetSaveString();
+
         //Getter: GetNumberOfCarrots
         int GetNumberOfCarrots();
 

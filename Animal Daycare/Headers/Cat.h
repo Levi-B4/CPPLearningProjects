@@ -18,6 +18,9 @@ class Cat : public Animal{
         //overrides Animal::Print() - outputs cat info
         void Print() override;
 
+        //overrides Animal:: GetSaveString() - returns animal as string for file saving
+        string GetSaveString();
+
         //Getter: GetIsOutdoor
         bool GetIsOutdoor();
 

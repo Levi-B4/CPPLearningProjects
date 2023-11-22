@@ -49,5 +49,12 @@ void Rabbit::Print(){
     cout << "Number of Carrots / Day: " << numberOfCarrots << endl;
 }
 
+//overrides Animal:: GetSaveString() - returns animal as string for file saving
+string Rabbit::GetSaveString(){
+    stringstream output;
+    output << "rabbit," << name << "," << age << "," << numberOfCarrots;
+    return output.str();
+}
+
 //default destructor
 Rabbit::~Rabbit(){};

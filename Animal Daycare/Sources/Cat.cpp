@@ -55,4 +55,11 @@ void Cat::Print(){
     }
 }
 
+//overrides Animal:: GetSaveString() - returns animal as string for file saving
+string Cat::GetSaveString(){
+    stringstream output;
+    output << "cat," << name << "," << age << "," << isOutdoor;
+    return output.str();
+}
+
 Cat::~Cat(){};

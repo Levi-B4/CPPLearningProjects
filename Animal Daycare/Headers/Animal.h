@@ -16,6 +16,9 @@ class Animal{
         //pure virtual print: children use to print out animal info
         virtual void Print() = 0;
 
+        //pure virtual GetSaveString: children use to return animal as string for file saving
+        virtual string GetSaveString() = 0;
+
         //Getter - GetDailyFee
         double GetDailyFee();
 

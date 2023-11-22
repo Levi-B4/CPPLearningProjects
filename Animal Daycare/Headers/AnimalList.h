@@ -9,11 +9,20 @@ class AnimalList{
         //default constructor
         AnimalList();
 
+        //Loads animals from external file
+        void LoadAnimals();
+
+        //saves animals to external file
+        void SaveAnimals();
+
         //inserts an animal at end of list
         void Insert(Animal* animal);
 
         //removes an animal - parameters: int index
         void RemoveAt(int index);
+
+        //Returns pointer to animal at index, returns nullptr if out if index
+        Animal* GetAnimalAt(int index);
 
         //prints out all animals
         void Print();

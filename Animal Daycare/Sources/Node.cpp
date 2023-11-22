@@ -19,3 +19,7 @@ void Node::SetNext(Node* next){
 Animal* Node::GetValue(){
     return value;
 }
+
+Node::~Node(){
+    delete value;
+}

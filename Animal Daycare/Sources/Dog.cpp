@@ -46,5 +46,12 @@ void Dog::Print(){
     cout << "Favorite Toy: " << favoriteToy << endl;
 }
 
+//overrides Animal:: GetSaveString() - returns animal as string for file saving
+string Dog::GetSaveString(){
+    stringstream output;
+    output << "dog," << name << "," << age << "," << favoriteToy;
+    return output.str();
+}
+
 //default destructor
 Dog::~Dog(){};

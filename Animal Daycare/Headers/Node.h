@@ -17,6 +17,8 @@ class Node{
         //Getter - GetValue
         Animal* GetValue();
 
+        ~Node();
+
     private:
         //location of next node
         Node* next = nullptr;
