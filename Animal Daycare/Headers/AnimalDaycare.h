@@ -29,5 +29,4 @@ private:
 
     //pick-up animal
     void RemoveAnimal();
-
 };

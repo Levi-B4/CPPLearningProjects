@@ -14,6 +14,7 @@
 //default constructor
 AnimalList::AnimalList(){}
 
+//load animals from external file
 void AnimalList::LoadAnimals(){
     //instantiate file
     ifstream inFile;
@@ -132,6 +133,7 @@ void AnimalList::RemoveAt(int index){
     currentNode->SetNext(tempNodePtr);
 }
 
+//returns pointer to the animal at the given index
 Animal* AnimalList::GetAnimalAt(int index){
     //tracks current node
     Node* currentNode = head;
@@ -170,6 +172,31 @@ void AnimalList::Print(){
     }
 }
 
+//destructor - iterates through list and deletes each node
+AnimalList::~AnimalList(){
+
+    //if list is empty, don't delete anything
+    if(head == nullptr){
+        return;
+    }
+
+    //holds node before current iteration, so it can be deleted
+    Node* previousNode = head;
+
+    //iterate through list until at the end, deleting each
+    for(Node* currentNode = previousNode->GetNext(); currentNode != nullptr; currentNode = currentNode->GetNext()){
+
+        //delete node before current iteration
+        delete previousNode;
+
+        //set previous node to current node
+        previousNode = currentNode;
+
+    }
+
+    //delete final node
+    delete previousNode;
+}
 
 
 

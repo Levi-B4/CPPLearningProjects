@@ -35,10 +35,9 @@ class Dog : public Animal
     private:
         //daily cost to keep dog at daycare
          int dailyFee = 50;
+
          //dog's favorite toy
          string favoriteToy;
-
-
 };
 
 #endif // DOG_H

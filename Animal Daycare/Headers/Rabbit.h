@@ -33,9 +33,9 @@ class Rabbit : public Animal{
     private:
         //daily cost to keep animal at daycare
         int dailyFee = 15;
+
         //number of carrots rabbit is allowed each day
         int numberOfCarrots;
-
 };
 
 

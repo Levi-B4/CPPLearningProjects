@@ -36,10 +36,6 @@ class Cat : public Animal{
 
         //true if cat is an outdoor cat
         bool isOutdoor;
-
-
-
-
 };
 
 

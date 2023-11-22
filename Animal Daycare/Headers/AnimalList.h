@@ -27,6 +27,9 @@ class AnimalList{
         //prints out all animals
         void Print();
 
+        //destructor - iterates through list and deletes each node
+        ~AnimalList();
+
     private:
         //first node in the list
         Node* head = nullptr;

@@ -20,6 +20,8 @@ Animal* Node::GetValue(){
     return value;
 }
 
+//destructor - deletes animal pointed to by value
 Node::~Node(){
+    //delete animal
     delete value;
 }

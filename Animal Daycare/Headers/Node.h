@@ -17,6 +17,7 @@ class Node{
         //Getter - GetValue
         Animal* GetValue();
 
+        //destructor - deletes animal pointed to by value
         ~Node();
 
     private:
@@ -25,10 +26,6 @@ class Node{
 
         //location of an animal
         Animal* value;
-
-
-
-
 };
 
 

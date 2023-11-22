@@ -90,9 +90,7 @@ void AnimalDaycare::Run(){
 //default destructor
 AnimalDaycare::~AnimalDaycare(){};
 
-//get animal type
-//get the animals info (you may assume it is entered correctly)
-//create animal and add to linked list
+//add animal to list
 void AnimalDaycare::AddAnimal(){
 
     //prompt user for animal type
@@ -105,9 +103,7 @@ void AnimalDaycare::AddAnimal(){
         :  animals.Insert(new Rabbit());
 }
 
-//pick up animal
-//ask for cage number
-//remove animal from linked list
+//remove animal from list
 void AnimalDaycare::RemoveAnimal(){
 
     //prompt user for cage number
@@ -119,6 +115,7 @@ void AnimalDaycare::RemoveAnimal(){
     //ignores 5 characters or until there is a new line character
     cin.ignore(5, '\n');
 
+    //remove animal from list at index (cageNumber)
     animals.RemoveAt(cageNumber);
 
     cout << "\n\nThank you!" << endl;

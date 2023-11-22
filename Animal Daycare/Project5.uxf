@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.1">
-  <zoom_level>10</zoom_level>
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>500</x>
-      <y>70</y>
-      <w>210</w>
-      <h>240</h>
+      <x>280</x>
+      <y>264</y>
+      <w>168</w>
+      <h>192</h>
     </coordinates>
     <panel_attributes>Animal
 --
@@ -32,10 +32,10 @@ style=autoresize</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>170</x>
-      <y>400</y>
-      <w>270</w>
-      <h>140</h>
+      <x>16</x>
+      <y>528</y>
+      <w>216</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>Cat
 --
@@ -53,18 +53,16 @@ style=autoresize</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>910</x>
-      <y>10</y>
-      <w>210</w>
-      <h>200</h>
+      <x>576</x>
+      <y>216</y>
+      <w>168</w>
+      <h>128</h>
     </coordinates>
     <panel_attributes>Daycare
 --
 - petsInDaycare: AnimalList
 --
 + Run(): void
-- LoadAnimals(): void
-- saveAnimals(): void
 - ViewAnimals(): void
 - AddfAnimal(): void
 - RemoveAnimal(): void
@@ -78,10 +76,10 @@ style=autoresize</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>300</x>
-      <y>300</y>
-      <w>310</w>
-      <h>120</h>
+      <x>120</x>
+      <y>448</y>
+      <w>248</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>290.0;10.0;290.0;40.0;10.0;40.0;10.0;100.0</additional_attributes>
@@ -89,10 +87,10 @@ style=autoresize</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>580</x>
-      <y>300</y>
-      <w>30</w>
-      <h>30</h>
+      <x>344</x>
+      <y>448</y>
+      <w>24</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;10.0</additional_attributes>
@@ -100,10 +98,10 @@ style=autoresize</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>580</x>
-      <y>300</y>
-      <w>330</w>
-      <h>120</h>
+      <x>344</x>
+      <y>448</y>
+      <w>264</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;40.0;310.0;40.0;310.0;100.0</additional_attributes>
@@ -111,10 +109,10 @@ style=autoresize</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>700</x>
-      <y>280</y>
-      <w>580</w>
-      <h>30</h>
+      <x>440</x>
+      <y>432</y>
+      <w>464</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>560.0;10.0;10.0;10.0</additional_attributes>
@@ -122,10 +120,10 @@ style=autoresize</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>160</x>
-      <y>670</y>
-      <w>290</w>
-      <h>90</h>
+      <x>8</x>
+      <y>744</y>
+      <w>232</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>read in file
 --
@@ -137,10 +135,10 @@ rabbit, &lt;name&gt;, &lt;age&gt;, &lt;numberOfCarrots&gt;</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>450</x>
-      <y>400</y>
-      <w>280</w>
-      <h>140</h>
+      <x>240</x>
+      <y>528</y>
+      <w>224</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>Dog
 --
@@ -158,10 +156,10 @@ style=autoresize</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>740</x>
-      <y>400</y>
-      <w>310</w>
-      <h>140</h>
+      <x>472</x>
+      <y>528</y>
+      <w>248</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>Rabbit
 --
@@ -179,10 +177,10 @@ style=autoresize</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>440</x>
-      <y>710</y>
-      <w>80</w>
-      <h>30</h>
+      <x>232</x>
+      <y>776</y>
+      <w>64</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>60.0;10.0;10.0;10.0</additional_attributes>
@@ -190,10 +188,10 @@ style=autoresize</panel_attributes>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>500</x>
-      <y>670</y>
-      <w>140</w>
-      <h>100</h>
+      <x>280</x>
+      <y>744</y>
+      <w>112</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>type=decision
 Select an option</panel_attributes>
@@ -202,10 +200,10 @@ Select an option</panel_attributes>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>460</x>
-      <y>580</y>
-      <w>20</w>
-      <h>20</h>
+      <x>248</x>
+      <y>672</y>
+      <w>16</w>
+      <h>16</h>
     </coordinates>
     <panel_attributes>type=flow_final</panel_attributes>
     <additional_attributes/>
@@ -213,10 +211,10 @@ Select an option</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>560</x>
-      <y>600</y>
-      <w>70</w>
-      <h>90</h>
+      <x>328</x>
+      <y>688</y>
+      <w>56</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 0: Exit</panel_attributes>
@@ -225,10 +223,10 @@ Select an option</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>600</x>
-      <y>620</y>
-      <w>150</w>
-      <h>100</h>
+      <x>360</x>
+      <y>704</y>
+      <w>120</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 1: View Animals</panel_attributes>
@@ -237,10 +235,10 @@ Select an option</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>730</x>
-      <y>610</y>
-      <w>100</w>
-      <h>40</h>
+      <x>464</x>
+      <y>696</y>
+      <w>80</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>Print animals</panel_attributes>
     <additional_attributes/>
@@ -248,10 +246,10 @@ Select an option</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>630</x>
-      <y>700</y>
-      <w>170</w>
-      <h>40</h>
+      <x>384</x>
+      <y>768</y>
+      <w>136</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 2: Drop Off Animal</panel_attributes>
@@ -260,10 +258,10 @@ Select an option</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>780</x>
-      <y>700</y>
-      <w>140</w>
-      <h>40</h>
+      <x>504</x>
+      <y>768</y>
+      <w>112</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>What animal (c, d, r)</panel_attributes>
     <additional_attributes/>
@@ -271,10 +269,10 @@ Select an option</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>600</x>
-      <y>730</y>
-      <w>130</w>
-      <h>90</h>
+      <x>360</x>
+      <y>792</y>
+      <w>104</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 3: Pick Up Animal</panel_attributes>
@@ -283,10 +281,10 @@ Select an option</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>710</x>
-      <y>780</y>
-      <w>120</w>
-      <h>50</h>
+      <x>448</x>
+      <y>832</y>
+      <w>96</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>which animal?
 Enter Cage #:  </panel_attributes>
@@ -295,10 +293,10 @@ Enter Cage #:  </panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>560</x>
-      <y>620</y>
-      <w>690</w>
-      <h>300</h>
+      <x>328</x>
+      <y>704</y>
+      <w>552</w>
+      <h>240</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 fg=BLACK</panel_attributes>
@@ -307,10 +305,10 @@ fg=BLACK</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>1060</x>
-      <y>700</y>
-      <w>130</w>
-      <h>40</h>
+      <x>728</x>
+      <y>768</y>
+      <w>104</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>enter their info
 name,age,special</panel_attributes>
@@ -319,10 +317,10 @@ name,age,special</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>910</x>
-      <y>700</y>
-      <w>170</w>
-      <h>50</h>
+      <x>608</x>
+      <y>768</y>
+      <w>136</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 assume entered
@@ -332,10 +330,10 @@ correctly</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>1070</x>
-      <y>760</y>
-      <w>100</w>
-      <h>40</h>
+      <x>736</x>
+      <y>816</y>
+      <w>80</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>create animal</panel_attributes>
     <additional_attributes/>
@@ -343,10 +341,10 @@ correctly</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>1060</x>
-      <y>820</y>
-      <w>120</w>
-      <h>40</h>
+      <x>728</x>
+      <y>864</y>
+      <w>96</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>Add to linked list</panel_attributes>
     <additional_attributes/>
@@ -354,10 +352,10 @@ correctly</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1110</x>
-      <y>730</y>
-      <w>30</w>
-      <h>50</h>
+      <x>768</x>
+      <y>792</y>
+      <w>24</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;30.0;10.0;10.0</additional_attributes>
@@ -365,10 +363,10 @@ correctly</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1110</x>
-      <y>790</y>
-      <w>30</w>
-      <h>50</h>
+      <x>768</x>
+      <y>840</y>
+      <w>24</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;30.0;10.0;10.0</additional_attributes>
@@ -376,10 +374,10 @@ correctly</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>860</x>
-      <y>780</y>
-      <w>120</w>
-      <h>50</h>
+      <x>568</x>
+      <y>832</y>
+      <w>96</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>Remove animal from linked list
 //styles
@@ -389,10 +387,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>820</x>
-      <y>790</y>
-      <w>60</w>
-      <h>30</h>
+      <x>536</x>
+      <y>840</y>
+      <w>48</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>40.0;10.0;10.0;10.0</additional_attributes>
@@ -400,10 +398,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1040</x>
-      <y>850</y>
-      <w>100</w>
-      <h>70</h>
+      <x>712</x>
+      <y>888</y>
+      <w>80</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
     <additional_attributes>10.0;50.0;50.0;50.0;80.0;30.0;80.0;10.0</additional_attributes>
@@ -411,10 +409,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>820</x>
-      <y>820</y>
-      <w>120</w>
-      <h>100</h>
+      <x>536</x>
+      <y>864</y>
+      <w>96</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
     <additional_attributes>10.0;80.0;50.0;80.0;100.0;50.0;100.0;10.0</additional_attributes>
@@ -422,15 +420,17 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1260</x>
-      <y>10</y>
-      <w>260</w>
-      <h>180</h>
+      <x>888</x>
+      <y>216</y>
+      <w>208</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>AnimalLinkedList
 --
 - head: Node*
 --
++ LoadAnimals(): void
++ SaveAnimals(): void
 + Insert(animal: Animal): void
 + RemoveAt(index: int): void
 + GetAnimalAt(index: int): Animal*
@@ -444,34 +444,34 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1110</x>
-      <y>110</y>
-      <w>170</w>
-      <h>30</h>
+      <x>736</x>
+      <y>296</y>
+      <w>168</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;150.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;190.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>700</x>
-      <y>110</y>
-      <w>230</w>
-      <h>40</h>
+      <x>440</x>
+      <y>296</y>
+      <w>152</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1
 m2=*</panel_attributes>
-    <additional_attributes>210.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>170.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>430</x>
-      <y>310</y>
-      <w>30</w>
-      <h>30</h>
+      <x>224</x>
+      <y>456</y>
+      <w>24</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;10.0</additional_attributes>
@@ -479,10 +479,10 @@ m2=*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>580</x>
-      <y>300</y>
-      <w>30</w>
-      <h>120</h>
+      <x>344</x>
+      <y>448</y>
+      <w>24</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
@@ -490,10 +490,10 @@ m2=*</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1260</x>
-      <y>280</y>
-      <w>210</w>
-      <h>140</h>
+      <x>888</x>
+      <y>432</y>
+      <w>168</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>Node
 --
@@ -510,10 +510,10 @@ m2=*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1330</x>
-      <y>180</y>
-      <w>40</w>
-      <h>120</h>
+      <x>944</x>
+      <y>352</y>
+      <w>32</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1
@@ -523,10 +523,10 @@ m2=*</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>530</x>
-      <y>570</y>
-      <w>100</w>
-      <h>40</h>
+      <x>304</x>
+      <y>664</y>
+      <w>80</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>save to file</panel_attributes>
     <additional_attributes/>
@@ -534,10 +534,10 @@ m2=*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>470</x>
-      <y>580</y>
-      <w>80</w>
-      <h>30</h>
+      <x>256</x>
+      <y>672</y>
+      <w>64</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;60.0;10.0</additional_attributes>

@@ -62,4 +62,5 @@ string Cat::GetSaveString(){
     return output.str();
 }
 
+//default destructor
 Cat::~Cat(){};
