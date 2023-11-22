@@ -1,4 +1,0 @@
-rabbit,Squeekers,3,5
-cat,Mila,4,103
-dog,Chloe,10,ball
-dog,Zoe,15,rock
