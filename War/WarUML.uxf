@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>14</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>616</x>
+      <y>98</y>
+      <w>364</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>Deck
+--
+- cards: Card*[MAX_CARDS]
+- numCards: int
+--
++ AddCardToPile(Card* card): void
++ RemoveTopCard(): Card*
++ GetNumCards(): int
++ Shuffle(): void
++ PrintCards(): void
+--
+*Responsibilities*
+-- handles group of cards and their logic
+//styles
+style=autoresize</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>140</x>
+      <y>98</y>
+      <w>266</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>Game
+--
+- playerA: Player
+- playerB: Player
+- currrentlyInPlay: Pile
+- deck: Card*[MAX_CARDS]
+--
++ Play()
+- Battle(): bool
+- DealCards(): void
+--
+*Responsibilities*
+-- handles game logic
+//styles
+style=autoresize</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1106</x>
+      <y>98</y>
+      <w>294</w>
+      <h>252</h>
+    </coordinates>
+    <panel_attributes>Card
+--
+- suit: int
+- rank: int
+--
++ GetRankString(): const char*
++ GetRank(): int
++ GetSuitString(): const char*
++ GetSuit(): int
+--
+*Responsibilities*
+-- Holds card data
+//styles
+style=autoresize</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>140</x>
+      <y>518</y>
+      <w>224</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>Player
+--
+- toPlay: Pile*
+- played: Pile*
+--
++ GetToPlayPile(): Pile*
++ GetPlayedPile(): Pile*
+--
+*Responsibilities*
+-- holds player data
+//styles
+style=autoresize</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>392</x>
+      <y>168</y>
+      <w>252</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>fontsize=20
+lt=&lt;-
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;160.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>350</x>
+      <y>364</y>
+      <w>462</w>
+      <h>266</h>
+    </coordinates>
+    <panel_attributes>fontsize=20
+lt=&lt;-
+m1=1
+m2=2</panel_attributes>
+    <additional_attributes>10.0;160.0;300.0;160.0;300.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>966</x>
+      <y>168</y>
+      <w>168</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>fontsize=20
+lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=52</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>252</x>
+      <y>364</y>
+      <w>56</w>
+      <h>182</h>
+    </coordinates>
+    <panel_attributes>fontsize=20
+lt=&lt;-
+m1=1
+m2=2</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+</diagram>
