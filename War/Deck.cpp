@@ -1,4 +1,4 @@
-#include "./Deck.h"
+#include "./Deck.h#include <iostream>;"
 
 //default constructor
 Deck::Deck(){}
