@@ -12,19 +12,22 @@ class Deck{
         Deck();
 
         //adds card to the bottom of the deck
-        void AddCardToDeck(Card* card);
+        void AddCard(Card* card);
 
         //removes top card from the deck
-        Card* RemoveTopCard();
+        Card* DrawCard();
 
         //getter - numCards
         int GetNumCards();
 
-        //randomizes deck order
-        void Suffle();
+        //randomizes card order
+        void Shuffle();
 
         //outputs the cards in the deck
         void PrintCards();
+
+        //default destructor
+        ~Deck();
 
     private:
 

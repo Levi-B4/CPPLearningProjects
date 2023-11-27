@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.1">
-  <zoom_level>14</zoom_level>
+  <zoom_level>10</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>616</x>
-      <y>98</y>
-      <w>364</w>
-      <h>280</h>
+      <x>460</x>
+      <y>30</y>
+      <w>260</w>
+      <h>200</h>
     </coordinates>
     <panel_attributes>Deck
 --
@@ -29,10 +29,10 @@ style=autoresize</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>140</x>
-      <y>98</y>
-      <w>266</w>
-      <h>280</h>
+      <x>120</x>
+      <y>30</y>
+      <w>190</w>
+      <h>200</h>
     </coordinates>
     <panel_attributes>Game
 --
@@ -54,20 +54,19 @@ style=autoresize</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1106</x>
-      <y>98</y>
-      <w>294</w>
-      <h>252</h>
+      <x>810</x>
+      <y>30</y>
+      <w>210</w>
+      <h>160</h>
     </coordinates>
     <panel_attributes>Card
 --
 - suit: int
 - rank: int
 --
-+ GetRankString(): const char*
-+ GetRank(): int
++ GetValueString(): const char*
++ GetValue(): int
 + GetSuitString(): const char*
-+ GetSuit(): int
 --
 *Responsibilities*
 -- Holds card data
@@ -78,10 +77,10 @@ style=autoresize</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>140</x>
-      <y>518</y>
-      <w>224</w>
-      <h>210</h>
+      <x>120</x>
+      <y>330</y>
+      <w>160</w>
+      <h>160</h>
     </coordinates>
     <panel_attributes>Player
 --
@@ -90,6 +89,7 @@ style=autoresize</panel_attributes>
 --
 + GetToPlayPile(): Pile*
 + GetPlayedPile(): Pile*
++ HasCards(): 
 --
 *Responsibilities*
 -- holds player data
@@ -100,10 +100,10 @@ style=autoresize</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>392</x>
-      <y>168</y>
-      <w>252</w>
-      <h>56</h>
+      <x>300</x>
+      <y>80</y>
+      <w>180</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>fontsize=20
 lt=&lt;-
@@ -114,10 +114,10 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>350</x>
-      <y>364</y>
-      <w>462</w>
-      <h>266</h>
+      <x>270</x>
+      <y>220</y>
+      <w>330</w>
+      <h>190</h>
     </coordinates>
     <panel_attributes>fontsize=20
 lt=&lt;-
@@ -128,10 +128,10 @@ m2=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>966</x>
-      <y>168</y>
-      <w>168</w>
-      <h>56</h>
+      <x>710</x>
+      <y>80</y>
+      <w>120</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>fontsize=20
 lt=&lt;&lt;&lt;&lt;-
@@ -142,15 +142,199 @@ m2=52</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>252</x>
-      <y>364</y>
-      <w>56</w>
-      <h>182</h>
+      <x>200</x>
+      <y>220</y>
+      <w>40</w>
+      <h>130</h>
     </coordinates>
     <panel_attributes>fontsize=20
 lt=&lt;-
 m1=1
 m2=2</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>130</x>
+      <y>620</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>play()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>350</x>
+      <y>760</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>battle()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>320</x>
+      <y>580</y>
+      <w>160</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>type=decision
+player out of cards?</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>220</x>
+      <y>630</y>
+      <w>120</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>100.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>390</x>
+      <y>690</y>
+      <w>40</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+no</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>270</x>
+      <y>830</y>
+      <w>270</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>get each players top card of toplay deck
+//styles
+style=autoresize</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>390</x>
+      <y>790</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>270</x>
+      <y>900</y>
+      <w>260</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>put played cards in playedCards deck of player with highest played card
+//styles
+style=autoresize
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>390</x>
+      <y>860</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>470</x>
+      <y>630</y>
+      <w>130</w>
+      <h>320</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0;110.0;300.0;60.0;300.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>390</x>
+      <y>520</y>
+      <w>50</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+yes</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>350</x>
+      <y>490</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>output winner</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>560</x>
+      <y>500</y>
+      <w>20</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>type=final</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>440</x>
+      <y>500</y>
+      <w>140</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>120.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>60</x>
+      <y>630</y>
+      <w>20</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>type=initial</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>70</x>
+      <y>630</y>
+      <w>80</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>60.0;10.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>

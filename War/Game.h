@@ -24,7 +24,7 @@ class Game{
         Deck currentlyInPlay[MAX_CARDS];
 
         //players battle, returns true if someone runs out of cards
-        bool Battle();
+        void Battle();
 
         //deal cards to players
         void DealCards();

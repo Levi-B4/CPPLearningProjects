@@ -2,25 +2,25 @@
 #define CARD_H
 
 enum SUIT {CLUB, DIAMOND, HEART, SPADE};
-enum RANK {TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING, ACE};
+enum VALUE {ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING};
 
 class Card{
     public:
 
-        //constructor - parameters: int suit, int value
-        Card(int suit, int value);
+        //constructor - parameters: int value, int suit
+        Card(int value, int suit);
 
         //Getter - returns value as string
-        const char* GetRankString();
+        const char* GetValueString();
 
         //Getter - get value
-        int GetRank();
+        int GetValue();
 
         //Getter - returns suit as string
         const char* GetSuitString();
 
-        //Getter - get suit
-        int GetSuit();
+        //default destructor
+        ~Card();
 
 
     private:

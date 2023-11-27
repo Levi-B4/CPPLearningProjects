@@ -9,20 +9,24 @@ class Player{
         //default constructor
         Player();
 
-        //Getter - toPlayDeck
+        //Getter - toPlay deck
         Deck* GetToPlayDeck();
 
-        //Getter - playedDeck
+        //Getter - played deck
         Deck* GetPlayedDeck();
 
+        //returns true if player has cards
+        bool HasCards();
+
+        ~Player();
 
     private:
 
         //hold cards that player plays from
-        Deck* toPlayDeck;
+        Deck* toPlay;
 
         //holds cards that have been played
-        Deck* playedDeck;
+        Deck* played;
 };
 
 
