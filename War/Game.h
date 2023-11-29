@@ -21,13 +21,16 @@ class Game{
         Player playerB;
 
         //holds cards that are currently in play
-        Deck currentlyInPlay[MAX_CARDS];
+        Deck inPlay[MAX_CARDS];
 
         //players battle, returns true if someone runs out of cards
         void Battle();
 
         //deal cards to players
         void DealCards();
+
+        // output amount of cards in each deck of each player
+        void PrintCardCounts();
 };
 
 

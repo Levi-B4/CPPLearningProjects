@@ -6,6 +6,7 @@ Card::Card(int value, int suit){
     this->suit = suit;
 }
 
+//Getter - returns value as string
 const char* Card::GetValueString(){
     switch(value){
         case ACE:
@@ -45,6 +46,7 @@ int Card::GetValue(){
     return value;
 }
 
+//Getter - returns value as string
 const char* Card::GetSuitString(){
     switch(suit){
         case CLUB:

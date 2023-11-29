@@ -15,7 +15,7 @@
 - numCards: int
 --
 + AddCardToPile(Card* card): void
-+ RemoveTopCard(): Card*
++ DrawCard(): Card*
 + GetNumCards(): int
 + Shuffle(): void
 + PrintCards(): void
@@ -156,7 +156,7 @@ m2=2</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>130</x>
+      <x>20</x>
       <y>620</y>
       <w>100</w>
       <h>40</h>
@@ -190,13 +190,13 @@ player out of cards?</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>220</x>
+      <x>110</x>
       <y>630</y>
-      <w>120</w>
+      <w>80</w>
       <h>30</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>100.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>60.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -319,7 +319,7 @@ yes</panel_attributes>
     <id>UMLSpecialState</id>
     <coordinates>
       <x>60</x>
-      <y>630</y>
+      <y>510</y>
       <w>20</w>
       <h>20</h>
     </coordinates>
@@ -329,7 +329,29 @@ yes</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>70</x>
+      <x>60</x>
+      <y>520</y>
+      <w>30</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>170</x>
+      <y>620</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>dealCards()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>260</x>
       <y>630</y>
       <w>80</w>
       <h>30</h>
