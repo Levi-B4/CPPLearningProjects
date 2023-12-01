@@ -27,9 +27,9 @@ void Game::Play(){
 
     //output who loses
     if(playerA.HasCards()){
-        cout << "Player B ran out of cards. Player B has lost.";
+        cout << "Player B ran out of cards. Player B has lost." << endl;
     } else {
-        cout << "Player A ran out of cards. Player A has lost.";
+        cout << "Player A ran out of cards. Player A has lost." << endl;
     }
 }
 
