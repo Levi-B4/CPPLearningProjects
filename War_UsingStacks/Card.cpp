@@ -1,4 +1,4 @@
-#include "./card.h"
+#include "./Card.h"
 
 //constructor - parameters: int value, int suit
 Card::Card(int value, int suit){

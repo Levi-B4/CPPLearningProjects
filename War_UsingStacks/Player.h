@@ -1,7 +1,7 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-#include "./deck.h"
+#include "./Deck.h"
 
 class Player{
     public:

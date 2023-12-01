@@ -1,7 +1,7 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include "./deck.h"
+#include "./Deck.h"
 #include "./Player.h"
 
 
